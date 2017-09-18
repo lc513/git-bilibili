@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			.nav_list li{
+				float: left;
+				width: 50px;
+				text-align: center;
+				margin-top: 10px;
+			}
+			.nav_list li .nva_l_pic{
+				background: url(images/page_icons.png) no-repeat -653px -1175px;
+				width: 100%;
+				height: 50px;
+				padding: 8px 10px 12px 0px;
+				box-sizing: border-box;
+				text-align: center;
+				line-height: 50px;
+			}
+			.nav_list li a{
+				width: 100%;
+				height: 50px;
+				box-sizing: border-box;
+				padding:0 10px 10px 10px;
+				color: #4A87BA;
+				font-size: 14px;
+				position: relative;
+			}
+			.nav_list li a:hover .list{
+				background: rgba(0,0,0,0.1);
+				display: block;
+			}
+			.nav_list li a p{
+				width: 100%;
+				height: 15px;
+				box-sizing: border-box;
+				color: #FFFFFF;
+				background: #ffafc9;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 15px;
+				margin-bottom: 10px;
+				font-size: 10px;
+			}
+			.nav_list .item{
+				width: 80px;
+				padding:0 10px;
+				box-sizing: border-box;
+			}
+			.nav_list .item a{
+				width: 100%;
+				height: 50px;
+				text-align: center;
+				line-height: 40px;
+				padding: 0px;
+				padding-left: 22px;
+				font-size: 16px;
+				background: url(images/page_icons.png) no-repeat;
+			} 
+			.nav_list .item-square a{
+				background-position: -660px -908px;
+			} 
+			.nav_list .item-live a{
+				background-position: -660px -522px;
+			} 
+			.nav_list .item-room a{
+				background-position: -725px -522px;
+			} 
+			/*hover*/
+			.nav_list .list_dh{
+				width: 150px;
+				border-radius: 5px;
+				background: #FFFFFF;
+				box-shadow: 1px 1px 3px #333333;
+				position: absolute;
+				left: 0;
+				top: 50px;
+				display: none;
+			}
+			.nav_list .list_dh ul{
+				width: 100%;
+				display: block;
+			}
+			.nav_list .list_dh ul li{
+				width: 100%;
+				margin-top: 0;
+				position: relative;
+				transition: all .3s;
+				background: #FFFFFF;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+			
+			.nav_list .list_dh ul li:hover{
+				background: rgba(0,0,0,0.1);
+				padding-left: 10px;
+			}
+			.nav_list .list_dh ul li div{
+				height: 30px;
+				width: 150px;
+				text-align: left;
+				padding-left: 22px;
+				line-height: 30px;
+				background: url(images/page_icons2.png) no-repeat 12px -1613px;
+			}
+			.nav_list .list_dh ul li div i{
+				height: 30px;
+				width: 10px;
+				display: block;
+				position: absolute;
+				right: -10px;
+				top: 0;
+				background: url(images/page_icons2.png) no-repeat -1px -1576px;
+				transition:all 0.3s;
+			}
+			.nav_list .list_dh ul li:hover i{
+				
+				right: 40px;
+			}
+			@keyframes mymove{
+				0%{
+					right: 10px;
+				}
+				20%{
+					right: 20px;
+				}
+				40%{
+					right: 30px;
+				}
+				60%{
+					right: 20px;
+				}
+				80%{
+					right: 10px;
+				}
+				to{
+					right: 0px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="page-width clearfix">
+				<ul class="nav_list">
+					<li>
+						<a class="nva_l_pic" href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							动画
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873+</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>83</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>73</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>3</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							首页
+							<div class="list list_dh">
+								<ul>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+									<li>
+										<div >
+											连载动画
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>83</p>
+							首页
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							首页
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>873</p>
+							首页
+						</a>
+					</li>
+					<li class="item item-square">
+						<a  href="#">
+							首页
+						</a>
+					</li>
+					<li class="item item-live">
+						<a  href="#">
+							
+							首页
+						</a>
+						
+					</li>
+					<li class="item item-room">
+						<a href="#">
+							
+							首页
+						</a>
+					</li>
+					<li class="">
+						<img src="images/cont/nav_img.gif" />
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+	</body>
+</html>

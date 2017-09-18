@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bilibili</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			/*头部开始*/
+			.header{
+				width: 100%;
+				height: 200px;
+				background: url(images/header_bg.jpg) no-repeat center top;
+			}
+			.header .header_top{
+				height: 30px;
+				position: relative;
+			}
+			.header .header_top .header_top_left{
+				float: left;
+				position: relative;
+			}
+			.header .header_top .header_top_right{
+				float: right;
+			}
+			.header .header_top  a{
+				float: left;
+				display: block;
+				font-size: 14px;
+				color: #FFFFFF;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				padding: 0 10px;
+				position: relative;
+			}
+			.header .header_top  span{
+				float: left;
+				display: block;
+				color: #FFFFFF;
+				height: 12px;;
+				text-align: center;
+				line-height: 30px;
+				border-left: 0.5px #FFFFFF solid;
+				box-sizing: border-box;
+				margin: 9px 0;
+			}
+			.header .header_top  a:hover{
+				background: rgba(255,255,255,0.4);
+				
+			}
+			.header .header_top  a:hover  .h_yx{
+				display: block;
+			}
+			.header .header_top .header_tg{
+				height: 48px;
+				width: 58px;
+				background: url(images/user_post.png) no-repeat center;
+			
+			}
+			.header .header_top .header_tg:hover{
+				background: url(images/user_post_hover.png) no-repeat center;
+			}
+			.header .header_c{
+				position: relative;
+			}
+			.header .header_c img{
+				margin-top: 30px;
+				display: none;
+			}
+			.header .header_c .header_search{
+				float: right;
+				position: absolute;
+				right: 0;
+				top: 80px;
+			}
+			.header .header_c .header_search span{
+				float: left;
+				width: 50px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				border-radius: 5px;
+				background: rgba(255,255,255,0.8);
+				color: #EA759F;
+			}
+			.header .header_c .header_search form{
+				float: right;
+				width: 250px;
+				height: 30px;
+				background: rgba(255,255,255,0.8);
+				border-radius: 5px;
+				margin-left: 10px;
+			}
+			.search{
+				width: 100%;
+				height: 100%;
+				padding: 0 40px 0 10px ;
+				box-sizing: border-box;
+			}
+			.header .header_c .header_search form a{
+				background-size: 20px 20px;
+				-moz-background-size:20px 20px; /* 老版本的 Firefox */
+				background: url(images/page_icons.png) no-repeat -660px -722px;
+				width: 40px;
+				height: 30px;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			/*头部接受*/
+			/*头部hover开始*/
+			.header .header_top .header_top_left .h_yx{
+				width: 466px;
+				height: 256px;
+				position: absolute;
+				top: 28px;
+				left: 0;
+				background: #FFFFFF;
+				box-shadow: 1px 1px 3px #999999;
+				display: none;
+			}
+			.header .header_top .header_top_left .h_yx .h_yx_l_top{
+				width: 240px;
+				height: 128px;
+				position: relative;
+				margin: 10px;
+			}
+			.header .header_top .header_top_left .h_yx .h_yx_l_top p{
+				position: absolute;
+				bottom: 0;
+				height: 30px;
+				width: 100%;
+				background: url(images/shadow.png);
+				border-radius: 10px;
+				overflow:visible;
+			}
+			.header .header_top .header_top_left .h_yx .h_yx_l_bot ul{
+				display: flex;
+				justify-content: space-around;
+			}
+			.header .header_top .header_top_left .h_yx .h_yx_l_bot ul li{
+				float: left;
+			}
+			.header .header_top .header_top_left .h_yx .h_yx_l_bot ul li img{
+				
+				border-radius: 10px;
+			}
+			.header .header_top .header_top_left .h_yx .h_yx_l_bot ul li p{
+				color: #666666;
+				font-size: 12px;
+			}
+			.header .header_top .header_top_left .h_yx_left{
+				float: left;
+			}
+			.header .header_top .header_top_left .h_yx_right {
+				float: right;
+				width: 200px;
+				height: 100%;
+				padding: 10px 10px 10px 0;
+				box-sizing: border-box;
+				background: url(images/game-center__shadow.png) repeat-y;
+			}
+			.header .header_top .header_top_left .h_yx_right img{
+				display: block;
+				float: left;
+			}
+			.header .header_top .header_top_left .h_yx_right p{
+				display: block;
+				float: right;
+				color: #00A1D6;
+				font-size: 12px;
+			}
+			.header .header_top .header_top_left .h_yx_right ul li{
+				color: #333333;
+				/*text-align: left;*/
+				display: list-item;
+			}
+			/*头部hover结束*/
+		</style> 
+	</head>
+	<body> 
+		<header class="header">
+			<div class="header_top page-width">
+				<div class="header_top_left">
+					<a href="#" >主站</a>
+					<a href="#" >画友</a>
+					<a href="#" >游戏中心
+					<div class="h_yx">
+							<div class="h_yx_left">
+								<div class="h_yx_l_top">
+									<div >
+										<img src="images/cont/game-center__img1.jpg"/>
+										<p>命运-官位指定（2017-09-12）</p>
+									</div>
+								</div>
+								<div class="h_yx_l_bot">
+									<ul>
+										<li>
+											<div href="#">
+												<img src="images/cont/bangumi_img1.jpg"/>
+												<p>刀剑神域</p>
+											</div>
+										</li>
+										<li>
+											<div href="#">
+												<img src="images/cont/bangumi_img2.jpg"/>
+												<p>刀剑神域</p>
+											</div>
+										</li>
+										<li>
+											<div href="#">
+												<img src="images/cont/bangumi_img3.jpg"/>
+												<p>刀剑神域</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="h_yx_right ">
+								<div class="clearfix">
+									<img src="images/game_center_title.png"/>
+									<p>游戏论坛</p>
+								</div>
+								<ul>
+									<li>老人与海</li>
+									<li>老人与海</li>
+									<li>老人与海</li>
+									<li>老人与海</li>
+									<li>老人与海</li>
+									<li>老人与海</li>
+									<li>老人与海</li>
+								</ul>
+							</div>
+						</div>
+					</a>
+					<a href="#" >直播</a>
+					<a href="#" >周边</a>
+					<a href="#" >游戏端</a>
+				</div> 
+				<div class="header_top_right">
+					<a href="#" >登录</a>
+					<span></span>
+					<a href="#" >注册</a>
+					<a href="#" class="header_tg">投稿</a>
+				</div>
+			</div>
+			<div class="header_c page-width">
+				<img src="images/header_logo.png" />
+				<div class="header_search">
+					<span>
+						排行榜
+					</span>
+					<form action="" method="post">
+						<input class="search" type="text" value="" placeholder="请输入..."/>
+						<a href="#">
+							
+						</a>
+					</form>
+				</div>
+			</div>
+		</header>
+	</body>
+</html>

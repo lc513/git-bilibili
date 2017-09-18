@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*version:2.7.0 */
+/*reset 重置浏览器默认样式*/
+
+html,body {
+	color:#898989;
+	background:#FFF;
+	font-family:"Microsoft YaHei UI","Microsoft YaHei UI Light","微软雅黑","宋体",Helvetica-Black-SemiBold,Tahoma,Arial,sans-serif;
+	font-size:12px;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset {
+	border:solid 1px #666;
+}
+img {
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {
+	font-style:inherit;
+	font-weight:inherit;
+}
+del,ins {
+	text-decoration:none;
+}
+li {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:normal;
+}
+h2 {
+	font-size:16px;
+}
+h3 {
+	font-size:14px;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym {
+	border:0;
+	font-variant:normal;
+}
+sup {
+	vertical-align:baseline;
+}
+sub {
+	vertical-align:baseline;
+}
+legend {
+	color:#000;
+}
+input,button,textarea,select,optgroup,option {
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+input,button,textarea,select {
+	*font-size:100%;
+}
+strong {
+	font-weight:bold;
+}
+em {
+	font-style:italic;
+}
+a {
+	color:#666;
+	text-decoration:none;
+}
+a:hover {
+	color:#06e;
+}
+a:focus {
+	outline:thin dotted;
+}
+/* 改善在所有浏览器中获取焦点和悬停时的可读性:h5bp.com/h */
+
+a:hover,a:active {
+	outline:0;
+}
+.fl {
+	float:left;
+}
+.fr {
+	float:right;
+}
+.clearfix {
+	*zoom:1;
+}
+.clearfix:before,.clearfix:after {
+	display:table;
+	line-height:0;
+	content:"";
+}
+.clearfix:after {
+	clear:both;
+}
+/*.container {
+	width:1100px;
+	margin-right:auto;
+	margin-left:auto;
+	*zoom:1;
+}
+.container:before,.container:after {
+	display:table;
+	line-height:0;
+	content:"";
+}
+.container:after {
+	clear:both;
+}
+*/
+@charset "utf-8";
+	html,body {
+	font-size:14px;
+	font-family:Arial,微软雅黑;
+	color:rgb(79,111,125);
+	background-color:rgb(246,246,246);
+}
+.box {
+	background-color:#fff;
+	padding:20px;
+	margin:20px auto;
+	width:82%;
+	line-height:22px;
+	border-color:#e8f3ec;
+	border-bottom:9px solid #E7EFF1;
+	box-shadow:1px 0px 5px rgba(100,100,100,0.3);
+}
+.form-control {
+	display:inline-block;
+	width:auto;
+	vertical-align:middle;
+	height:20px;
+	padding:6px 12px;
+	font-size:14px;
+	line-height:1.42857143;
+	color:#555;
+	background-color:#fff;
+	border:1px solid #ccc;
+	border-radius:3px;
+	box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+}
+.btn {
+	color:#fff;
+	background-color:#5bc0de;
+	border-color:#46b8da;
+	display:inline-block;
+	padding:6px 12px;
+	margin-bottom:0;
+	font-size:14px;
+	font-weight:400;
+	line-height:1.42857143;
+	text-align:center;
+	vertical-align:middle;
+	cursor:pointer;
+	border:1px solid transparent;
+	border-radius:3px;
+}
+.table-bordered {
+	border:1px solid #ddd;
+}
+.table {
+	width:100%;
+	max-width:100%;
+}
+thead {
+	display:table-header-group;
+	vertical-align:middle;
+}
+thead tr {
+	font-weight:bold;
+	border:1px solid #ddd;
+	border-bottom-width:2px;
+}
+td {
+	padding:8px;
+	line-height:1.42857143;
+	border:1px solid #ddd;
+}
+a {
+	cursor:pointer;
+	color:#7698A7;
+}
+
+		</style>
+		<link rel="stylesheet" href="lib/jquery-ui.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="libs/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+			$( "#date" ).datepicker();
+    var oChange = document.getElementById('change');
+    var oTr = document.querySelectorAll('tbody tr');
+    var oAdd = document.getElementById('add');
+    var oName = document.getElementById('name');
+    var oSearch = document.getElementById('search');
+    var oSearchStart = document.getElementById('search_start');
+    var oAges = document.getElementById('age');
+    var oSort = document.getElementById('sort')
+    var oNo = document.querySelectorAll('tbody tr td');
+    var oTbody = document.querySelectorAll('tbody')[0];
+    var oAge = document.getElementsByClassName('age')
+    var oA = document.querySelectorAll('tbody a');
+    var flag = 0;
+    var flag1 = 1;
+
+    oAdd.onclick = function() {
+        oTr = document.querySelectorAll('tbody tr');
+        if (oAges.value != '' && oName.value != "") {
+            if (isNaN(oAges.value)) {
+                alert('请检查输入的年龄是否正确');
+                return
+            }
+            var td = document.createElement('td');
+            td.innerHTML = parseInt(oTr.length) + 1;
+            var td1 = document.createElement('td');
+            td1.innerHTML = oName.value;
+            var td2 = document.createElement('td');
+            td2.setAttribute('class', 'age');
+            td2.innerHTML = oAges.value;
+            var td3 = document.createElement('td');
+            td3.innerHTML = '<a href = "#" > 删除 </a>';
+            var tr = document.createElement('tr');
+            tr.appendChild(td);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            oTbody.appendChild(tr);
+//          oAges.value = '';
+//          oName.value = '';
+
+        } else {
+            alert('请输入姓名和年龄');
+        }
+    }
+    oChange.onclick = function() {
+        oTr = document.querySelectorAll('tbody tr');
+
+        if (flag == 0) {
+            oChange.style.backgroundColor = '#c9302c';
+            oChange.style.borderColor = '#ac2925';
+            change();
+            flag = 1;
+        } else if (flag == 1) {
+            oChange.style.backgroundColor = '#5bc0de';
+            oChange.style.borderColor = '46b8da';
+            changeno();
+            flag = 0;
+        }
+
+    }
+    oSearchStart.onclick = function() {
+        oTr = document.querySelectorAll('tbody tr');
+        search();
+    }
+    oSort.onclick = function() {
+        oTr = document.querySelectorAll('tbody tr');
+        sort(oAge)
+    }
+    oTbody.onclick = function(event) {
+        oTr = document.querySelectorAll('tbody tr');
+        if (event.target.tagName == 'A')
+            this.removeChild(event.target.parentNode.parentNode)
+    }
+
+    function search() {
+
+        if (oSearch.value != '') {
+            for (var i = 0; i < oTr.length; i++) {
+
+                oTr[i].style.backgroundColor = 'white'
+
+            }
+            for (var i = 0; i < oTr.length; i++) {
+                if (oTr[i].cells[1].innerText.indexOf(oSearch.value) != -1) {
+                    oTr[i].style.backgroundColor = 'yellow'
+                }
+            }
+        } else {
+            for (var i = 0; i < oTr.length; i++) {
+
+                oTr[i].style.backgroundColor = 'white'
+
+            }
+        }
+    }
+
+    function sort(priceorder) {
+        var temp;
+        for (var i = 0; i < priceorder.length; i++) {
+            for (var j = 0; j < priceorder.length - i - 1; j++) {
+                if (parseFloat(priceorder[j].innerHTML) > parseFloat(priceorder[j + 1].innerHTML)) {
+                    temp = priceorder[j].parentNode.innerHTML;
+                    priceorder[j].parentNode.innerHTML = priceorder[j + 1].parentNode.innerHTML;
+                    priceorder[j + 1].parentNode.innerHTML = temp;
+
+                }
+            }
+        }
+    }
+
+    function change() {
+        for (var i = 0; i < oTr.length; i++) {
+            oTr[i].onmouseover = function() {
+                if (this.style.backgroundColor != 'yellow')
+                    this.style.backgroundColor = 'rgb(238,238,238)'
+            }
+            oTr[i].onmouseout = function() {
+                if (this.style.backgroundColor != 'yellow')
+                    this.style.backgroundColor = ''
+            }
+        }
+    }
+
+    function changeno() {
+
+        for (var i = 0; i < oTr.length; i++) {
+            oTr[i].onmouseover = function() {
+                if (this.style.backgroundColor != 'yellow')
+                    this.style.backgroundColor = ''
+            }
+            oTr[i].onmouseout = function() {
+                if (this.style.backgroundColor != 'yellow')
+                    this.style.backgroundColor = ''
+            }
+
+        }
+    }
+
+}
+		</script>
+	</head>
+	<body>
+	<input type="text" name="date" id="date" />
+		<div class="box">
+
+    添加：<input type="text" id="name" class="form-control" placeholder="姓名">
+    <input type="text" id="age" class="form-control" placeholder="年龄">
+    <input type="button" class="btn" id="add" value="添加"> 变色：
+    <input type="button" class="btn" id="change" value="开启移入变色">
+    <br><br>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td class="age">33</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td class="age">34</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>王五</td>
+                <td class="age">25</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>赵六</td>
+                <td class="age">16</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>王四</td>
+                <td class="age">44</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Danny</td>
+                <td class="age">23</td>
+                <td>
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br> 搜索：
+    <input type="text" class="form-control" id="search" placeholder="姓名">
+    <input type="button" class="btn" id="search_start" value="搜索"> 排序：
+    <input type="button" class="btn" id="sort" value="年龄从小排序">
+    <br><br> 数组里存的是所有tr，排序的时候按照第三个单元格的innerHTML大小排序。最后按照新的顺序重新添加所有tr。
+</div>
+	</body>
+</html>
